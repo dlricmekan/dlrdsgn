@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#3E3E3E;--bgd:#2A2828;--card:#454343;--cream:#E8E0D5;--dim:#B8AFA4;--white:#F2EDE7;--gold:#C9B99A;--gold2:#A89070}
+:root{--bg:#3E3E3E;--bgd:#2A2828;--card:#454343;--cream:#E8E0D5;--dim:#B8AFA4;--white:#F2EDE7;--gold:#C9B99A}
 html{scroll-behavior:smooth}
 body{font-family:'Cormorant Garamond',serif;background:var(--bg);color:var(--cream);overflow-x:hidden;cursor:none}
 .cur{width:8px;height:8px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
@@ -47,7 +47,6 @@ nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-betwe
 .t-pane{display:none}
 .t-pane.on{display:block}
 
-/* FULL WIDTH INFO PANELS */
 .p-info{background:var(--card);padding:72px 80px;position:relative;overflow:hidden}
 .p-info::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border:1px solid rgba(201,185,154,.06);border-radius:50%}
 .p-info::after{content:'';position:absolute;bottom:-60px;left:-40px;width:200px;height:200px;border:1px solid rgba(201,185,154,.04);border-radius:50%}
@@ -68,7 +67,6 @@ nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-betwe
 .p-cta:hover{color:var(--white);border-color:var(--white)}
 .p-cta:hover .arr{transform:translateX(6px)}
 
-/* ABOUT */
 .ab-info{background:var(--card);padding:72px 80px;position:relative;overflow:hidden}
 .ab-info::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border:1px solid rgba(201,185,154,.06);border-radius:50%}
 .ab-eye{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;position:relative;z-index:1}
@@ -79,7 +77,6 @@ nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-betwe
 .ab-list li{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);padding:14px 0;border-bottom:1px solid rgba(201,185,154,.1);display:flex;align-items:center;gap:14px}
 .ab-list li::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
 
-/* QUIZ */
 .quiz-wrap{padding:72px 80px;background:var(--card)}
 .q-inner{max-width:860px}
 .q-progress{display:flex;gap:6px;margin-bottom:64px}
@@ -110,7 +107,6 @@ nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-betwe
 .q-btn.on:hover{background:var(--gold);color:var(--bgd)}
 .q-skip{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);cursor:none;text-decoration:underline;text-underline-offset:4px}
 .q-skip:hover{color:var(--cream)}
-
 .r-wrap{padding-top:20px}
 .r-lbl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
 .r-title{font-size:clamp(36px,5vw,72px);font-weight:300;line-height:1;margin-bottom:28px;color:var(--white)}
@@ -183,74 +179,13 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.3em;text
 <section class="gal" id="gallery">
   <div class="sec-lbl">Bizi Tanıyın</div>
   <div class="t-nav">
-    <button class="t-btn on" onclick="tab('hiz',this)">Hizmetlerimiz</button>
+    <button class="t-btn on" onclick="tab('qz',this)">Stil Testim</button>
+    <button class="t-btn" onclick="tab('hiz',this)">Hizmetlerimiz</button>
     <button class="t-btn" onclick="tab('nas',this)">Nasıl Çalışıyoruz</button>
     <button class="t-btn" onclick="tab('dlr',this)">DLR Kimdir</button>
-    <button class="t-btn" onclick="tab('qz',this)">Stil Testim</button>
   </div>
 
-  <div class="t-pane on" id="t-hiz">
-    <div class="p-info">
-      <div class="p-num">01</div>
-      <h2 class="p-title">Mekanlarınızı inşa edilmeden <em>keşfedin.</em></h2>
-      <p class="p-desc">Hayal etmek yerine, görün. 3D görselleştirme ile mekanınız henüz inşa edilmeden tam olarak nasıl görüneceğini sunuyoruz.</p>
-      <ul class="p-list">
-        <li>Satılık Gayrimenkul — En yüksek potansiyeliyle satışı hızlandırın</li>
-        <li>Ticari Mekanlar — Müşteri çeken atmosferler ve vizyoner tasarımlar</li>
-        <li>Kişisel Yaşam — Sizinle düşünen, hayalinizdeki evi tasarlayan bir yol arkadaşı</li>
-      </ul>
-      <button class="p-cta" onclick="goMail()">Ücretsiz Keşif Randevusu <span class="arr">→</span></button>
-    </div>
-  </div>
-
-  <div class="t-pane" id="t-nas">
-    <div class="p-info">
-      <div class="p-num">02</div>
-      <h2 class="p-title">Hayalden gerçeğe <em>3 adım.</em></h2>
-      <p class="p-desc">Sürpriz yok. Şeffaf süreç, fotorealistik sonuç. Projeniz için en iyi deneyimi sunuyoruz.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-n">01</div>
-          <div>
-            <div class="step-t">Keşif &amp; Dinleme</div>
-            <div class="step-d">Sizi, ihtiyaçlarınızı ve bütçenizi dinliyoruz. Mekanınızı en iyi potansiyeline ulaştırmak için planlıyoruz.</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-n">02</div>
-          <div>
-            <div class="step-t">Tasarım &amp; Görselleştirme</div>
-            <div class="step-d">Mekanınızın bitmiş halini fotorealistik kalitede, tüm malzeme ve ışık detaylarıyla sunuyoruz. Sürpriz yok!</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-n">03</div>
-          <div>
-            <div class="step-t">Güvenle Uygulama</div>
-            <div class="step-d">Onaylanan tasarımı güvenilir atölyelerimizle hayata geçiririz ya da ekibinize eksiksiz teslim ederiz.</div>
-          </div>
-        </div>
-      </div>
-      <button class="p-cta" onclick="goMail()">Projeniz İçin Tanışalım <span class="arr">→</span></button>
-    </div>
-  </div>
-
-  <div class="t-pane" id="t-dlr">
-    <div class="ab-info">
-      <div class="ab-eye">İç Mimar &amp; 3D Görselleştirme Uzmanı</div>
-      <h2 class="ab-name"><em>Dilara</em> Yanç</h2>
-      <p class="ab-bio">Her mekanın kendine özgü bir hikayesi olduğuna inanarak bu yolculuğa çıktım. Mimari eğitimimi 3D görselleştirme tutkuyla birleştirerek, henüz inşa edilmemiş hayalleri gerçeğe en yakın haliyle sunmayı amaçlıyorum. Tasarımın gücünü ve detayların önemini keşfettikçe, yaşam alanlarına değer katmak için heyecanla çalışıyorum.</p>
-      <ul class="ab-list">
-        <li>Konut &amp; Ticari İç Mimari Projeler</li>
-        <li>Yüksek Kaliteli 3D Renderlama</li>
-        <li>Mekan Planlama &amp; Konsept Geliştirme</li>
-        <li>Malzeme &amp; Aydınlatma Danışmanlığı</li>
-      </ul>
-      <button class="p-cta" onclick="goMail()">Tanışalım <span class="arr">→</span></button>
-    </div>
-  </div>
-
-  <div class="t-pane" id="t-qz">
+  <div class="t-pane on" id="t-qz">
     <div class="quiz-wrap">
       <div class="q-inner">
         <div class="q-progress">
@@ -258,7 +193,7 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.3em;text
         </div>
         <div class="q-step on" id="q0">
           <p class="q-num">01 / 05</p>
-          <h2 class="q-text">Sizi en çok <em>hangi renk</em> içinde hissettiriyor?</h2>
+          <h2 class="q-text">Sizi en çok <em>hangi renk</em> iyi hissettiriyor?</h2>
           <div class="og c2">
             <div class="oc oc-clr" data-q="0" data-v="terra"><div class="sw" style="background:#C4784A"></div><div><span class="ol">Terracotta &amp; Toprak</span><span class="os">Sıcak · Samimi · Köklü</span></div></div>
             <div class="oc oc-clr" data-q="0" data-v="sage"><div class="sw" style="background:#7A9E7E"></div><div><span class="ol">Ada Yeşili &amp; Çam</span><span class="os">Sakin · Organik · Taze</span></div></div>
@@ -326,6 +261,58 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.3em;text
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="t-pane" id="t-hiz">
+    <div class="p-info">
+      <div class="p-num">01</div>
+      <h2 class="p-title">Mekanlarınızı inşa edilmeden <em>keşfedin.</em></h2>
+      <p class="p-desc">Hayal etmek yerine, görün. 3D görselleştirme ile mekanınız henüz inşa edilmeden tam olarak nasıl görüneceğini sunuyoruz.</p>
+      <ul class="p-list">
+        <li>Satılık Gayrimenkul — En yüksek potansiyeliyle satışı hızlandırın</li>
+        <li>Ticari Mekanlar — Müşteri çeken atmosferler ve vizyoner tasarımlar</li>
+        <li>Kişisel Yaşam — Sizinle düşünen, hayalinizdeki evi tasarlayan bir yol arkadaşı</li>
+      </ul>
+      <button class="p-cta" onclick="goMail()">Ücretsiz Keşif Randevusu <span class="arr">→</span></button>
+    </div>
+  </div>
+
+  <div class="t-pane" id="t-nas">
+    <div class="p-info">
+      <div class="p-num">02</div>
+      <h2 class="p-title">Hayalden gerçeğe <em>3 adım.</em></h2>
+      <p class="p-desc">Sürpriz yok. Şeffaf süreç, fotorealistik sonuç.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <div><div class="step-t">Keşif &amp; Dinleme</div><div class="step-d">Sizi, ihtiyaçlarınızı ve bütçenizi dinliyoruz. Mekanınızı en iyi potansiyeline ulaştırmak için planlıyoruz.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <div><div class="step-t">Tasarım &amp; Görselleştirme</div><div class="step-d">Mekanınızın bitmiş halini fotorealistik kalitede, tüm malzeme ve ışık detaylarıyla sunuyoruz. Sürpriz yok!</div></div>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <div><div class="step-t">Güvenle Uygulama</div><div class="step-d">Onaylanan tasarımı güvenilir atölyelerimizle hayata geçiririz ya da ekibinize eksiksiz teslim ederiz.</div></div>
+        </div>
+      </div>
+      <button class="p-cta" onclick="goMail()">Projeniz İçin Tanışalım <span class="arr">→</span></button>
+    </div>
+  </div>
+
+  <div class="t-pane" id="t-dlr">
+    <div class="ab-info">
+      <div class="ab-eye">İç Mimar &amp; 3D Görselleştirme Uzmanı</div>
+      <h2 class="ab-name"><em>Dilara</em> Yanç</h2>
+      <p class="ab-bio">Her mekanın kendine özgü bir hikayesi olduğuna inanarak bu yolculuğa çıktım. Mimari eğitimimi 3D görselleştirme tutkuyla birleştirerek, henüz inşa edilmemiş hayalleri gerçeğe en yakın haliyle sunmayı amaçlıyorum. Tasarımın gücünü ve detayların önemini keşfettikçe, yaşam alanlarına değer katmak için heyecanla çalışıyorum.</p>
+      <ul class="ab-list">
+        <li>Konut &amp; Ticari İç Mimari Projeler</li>
+        <li>Yüksek Kaliteli 3D Renderlama</li>
+        <li>Mekan Planlama &amp; Konsept Geliştirme</li>
+        <li>Malzeme &amp; Aydınlatma Danışmanlığı</li>
+      </ul>
+      <button class="p-cta" onclick="goMail()">Tanışalım <span class="arr">→</span></button>
     </div>
   </div>
 </section>
